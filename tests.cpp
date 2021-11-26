@@ -310,6 +310,8 @@ struct non_copy_assignable {
   non_copy_assignable(non_copy_assignable&&) = default;
   non_copy_assignable& operator=(const non_copy_assignable&) = delete;
   non_copy_assignable& operator=(non_copy_assignable&&) = default;
+  
+  std::vector<int> v;
 };
 
 TEST(optional_traits, non_copy_assignable) {
@@ -324,6 +326,8 @@ struct non_copyable {
   non_copyable(non_copyable&&) = delete;
   non_copyable& operator=(const non_copyable&) = default;
   non_copyable& operator=(non_copyable&&) = default;
+  
+  std::vector<int> v;
 };
 
 TEST(optional_traits, non_copyable) {
@@ -336,6 +340,8 @@ struct non_assignable {
   non_assignable(non_assignable&&) = default;
   non_assignable& operator=(const non_assignable&) = delete;
   non_assignable& operator=(non_assignable&&) = delete;
+  
+  std::vector<int> v;
 };
 
 TEST(optional_traits, non_assignable) {
@@ -357,6 +363,8 @@ struct only_move_constructible {
   only_move_constructible(only_move_constructible&&) = default;
   only_move_constructible& operator=(const only_move_constructible&) = delete;
   only_move_constructible& operator=(only_move_constructible&&) = delete;
+  
+  std::vector<int> v;
 };
 
 TEST(optional_traits, only_move_constructible) {
@@ -371,6 +379,8 @@ struct nothing {
   nothing(nothing&&) = delete;
   nothing& operator=(const nothing&) = delete;
   nothing& operator=(nothing&&) = delete;
+  
+  std::vector<int> v;
 };
 
 TEST(optional_traits, nothing) {
